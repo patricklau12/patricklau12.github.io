@@ -29,52 +29,7 @@ String currentTyped = ""; //what the user has typed so far
 int currentLetter = int('a');
 
 
-// My variables
-float buttonWidth = sizeOfInputArea / 3;
-float buttonHeight = sizeOfInputArea / 3;
-String buttonLabels = {"abc", "def", "ghi","jkl", "mno","pqr", "stu","vwx", "yz"};
-
-boolean isDetailedView = false;
-int detailedViewIndex = -1; // Index of the button pressed to enter detailed view
-
-String detailedViewLabels = {
-    {"<-", "<-", "<-", "a", "b", "c", "[ ]", "", "del"} ,
-    {"<-", "<-", "<-", "d", "e", "f", "[ ]", "", "del"} ,
-    {"<-", "<-", "<-", "g", "h", "i", "[ ]", "", "del"} ,
-    {"<-", "<-", "<-", "j", "k", "l", "[ ]", "", "del"} ,
-    {"<-", "<-", "<-", "m", "n", "o", "[ ]", "", "del"} ,
-    {"<-", "<-", "<-", "p", "q", "r", "[ ]", "", "del"} ,
-    {"<-", "<-", "<-", "s", "t", "u", "[ ]", "", "del"} ,
-    {"<-", "<-", "<-", "v", "w", "x", "[ ]", "", "del"} ,
-    {"<-", "<-", "<-", "y", "z", "", "[ ]", "", "del"} ,
-};
-
-// Scrollable picker variables
-String letters = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
-String bottomRowButtons = {"[ ]", "DEL"};
-
-int pickerVisibleLetters = 2; // Number of letters to display on either side of the current letter
-// Variables for scrollable picker
-int pickerLetterCount = 5; // Total number of letters to display at once
-int currentLetterIndex = 0; // Index of the currently highlighted letter
-float pickerX, pickerY, pickerWidth, pickerHeight; // Position and size of picker
-float letterSpaceWidth; // Width allocated for each letter in the picker
-boolean isDragging = false; // Flag to track if the user is dragging the picker
-float dragStartX = 0; // X position where the last drag started
-int dragStartIndex = 0; // Index of the letter when the last drag started
-
-
-boolean overPicker(float x, float y) {
-  // The picker occupies the first two rows and three columns
-  float pickerLeft = width / 2 - sizeOfInputArea / 2;
-  float pickerRight = pickerLeft + buttonWidth * 3;
-  float pickerTop = height / 2 - sizeOfInputArea / 2;
-  float pickerBottom = pickerTop + buttonHeight * 2;
-
-  // Check if the x and y coordinates are within the bounds of the picker
-  return x >= pickerLeft && x <= pickerRight && y >= pickerTop && y <= pickerBottom;
-}
-
+// My variabes
 //You can add stuff in here. This is just a basic implementation.
 void setup()
 {
