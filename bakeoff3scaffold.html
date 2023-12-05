@@ -32,12 +32,12 @@ int currentLetter = int('a');
 // My variables
 float buttonWidth = sizeOfInputArea / 3;
 float buttonHeight = sizeOfInputArea / 3;
-String[] buttonLabels = {"abc", "def", "ghi","jkl", "mno","pqr", "stu","vwx", "yz"};
+String buttonLabels = {"abc", "def", "ghi","jkl", "mno","pqr", "stu","vwx", "yz"};
 
 boolean isDetailedView = false;
 int detailedViewIndex = -1; // Index of the button pressed to enter detailed view
 
-String[][] detailedViewLabels = {
+String detailedViewLabels = {
     {"<-", "<-", "<-", "a", "b", "c", "[ ]", "", "del"} ,
     {"<-", "<-", "<-", "d", "e", "f", "[ ]", "", "del"} ,
     {"<-", "<-", "<-", "g", "h", "i", "[ ]", "", "del"} ,
@@ -50,8 +50,8 @@ String[][] detailedViewLabels = {
 };
 
 // Scrollable picker variables
-String[] letters = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
-String[] bottomRowButtons = {"[ ]", "DEL"};
+String letters = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
+String bottomRowButtons = {"[ ]", "DEL"};
 
 int pickerVisibleLetters = 2; // Number of letters to display on either side of the current letter
 // Variables for scrollable picker
