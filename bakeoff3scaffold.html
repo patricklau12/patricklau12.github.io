@@ -186,7 +186,56 @@
               );
             }
           }
-          
+
+          function setupPicker() {
+            pickerX = width / 2 - sizeOfInputArea / 2;
+            pickerY = height / 2 - sizeOfInputArea / 2;
+            pickerWidth = buttonWidth * 3;
+            pickerHeight = buttonHeight * 2;
+            letterSpaceWidth = pickerWidth / pickerLetterCount;
+          }
+    
+          function drawPicker() {
+            fill(200);
+            rect(pickerX, pickerY, pickerWidth, pickerHeight);
+    
+            for (let i = -pickerVisibleLetters; i <= pickerVisibleLetters; i++) {
+              let letterIndex =
+                (currentLetterIndex + i + letters.length) % letters.length;
+              let letterX = pickerX + (i + pickerVisibleLetters) * letterSpaceWidth;
+    
+              if (letterIndex === currentLetterIndex)
+                fill(255, 0, 0); // Highlight selected letter
+              else fill(0);
+    
+              textAlign(CENTER, CENTER);
+              text(
+                letters[letterIndex],
+                letterX + letterSpaceWidth / 2,
+                pickerY + pickerHeight / 2
+              );
+            }
+          }
+    
+          function drawButtons() {
+            for (let i = 0; i < bottomRowButtons.length; i++) {
+              let x = width / 2 - sizeOfInputArea / 2 + i * 1.5 * buttonWidth;
+              let y = height / 2 - sizeOfInputArea / 2 + 2 * buttonHeight;
+    
+              if (i === 0) fill(100, 200, 100); // Green for space
+              else fill(200, 100, 100); // Red for delete
+    
+              rect(x, y, 1.5 * buttonWidth, buttonHeight);
+              fill(0);
+              textAlign(CENTER, CENTER);
+              text(
+                bottomRowButtons[i],
+                x + 0.75 * buttonWidth,
+                y + buttonHeight / 2
+              );
+            }
+          }
+
           boolean didMouseClick(float x, float y, float w, float h) //simple function to do hit testing
           {
             return (mouseX > x && mouseX<x+w && mouseY>y && mouseY<y+h); //check to see if it is in button bounds
